@@ -263,14 +263,14 @@
 	},
 	"dependencies": {
 		"edge-diagnostics-adapter": "0.6.0",
-		"source-map": "^0.7.4",
+		"source-map": "0.7.4",
 		"ws": "8.17.0"
 	},
 	"description": "Debug your JavaScript code in the Edge browser.",
 	"devDependencies": {
-		"@types/node": "^20.14.2",
-		"mockery": "^2.1.0",
-		"sinon": "^18.0.0"
+		"@types/node": "20.14.2",
+		"mockery": "2.1.0",
+		"sinon": "18.0.0"
 	},
 	"displayName": "Debugger for Edge",
 	"icon": "images/icon.png",
