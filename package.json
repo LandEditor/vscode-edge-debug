@@ -1,4 +1,10 @@
 {
+	"name": "debugger-for-edge",
+	"displayName": "Debugger for Edge",
+	"description": "Debug your JavaScript code in the Edge browser.",
+	"scripts": {
+		"build": "node ./node_modules/gulp/bin/gulp.js build"
+	},
 	"contributes": {
 		"debuggers": [
 			{
@@ -262,20 +268,14 @@
 		]
 	},
 	"dependencies": {
-		"edge-diagnostics-adapter": "0.3.2",
-		"source-map": "^0.5.3",
-		"ws": "0.8.0"
+		"edge-diagnostics-adapter": "0.6.0",
+		"source-map": "0.8.0-beta.0",
+		"ws": "8.18.0"
 	},
-	"description": "Debug your JavaScript code in the Edge browser.",
 	"devDependencies": {
-		"@types/node": "^6.0.40",
-		"mockery": "^1.4.0",
-		"sinon": "^1.17.2"
+		"@types/node": "20.14.12",
+		"mockery": "2.1.0",
+		"sinon": "18.0.0"
 	},
-	"displayName": "Debugger for Edge",
-	"icon": "images/icon.png",
-	"name": "debugger-for-edge",
-	"scripts": {
-		"build": "node ./node_modules/gulp/bin/gulp.js build"
-	}
+	"icon": "images/icon.png"
 }
