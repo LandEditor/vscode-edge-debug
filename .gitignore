@@ -1,8 +1,4 @@
-# Node binaries
-###############
 node_modules/
 
-# Build output
-###############
 out/
 *.vsix
