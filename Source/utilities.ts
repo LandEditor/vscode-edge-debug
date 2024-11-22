@@ -23,6 +23,7 @@ export function getAdapterPath(): string {
 	const platform = utils.getPlatform();
 	// There is no good way to get the system arch so detecting the program files dir
 	let arch;
+
 	if (process.env.hasOwnProperty("ProgramFiles(x86)")) {
 		arch = "x64";
 	} else {

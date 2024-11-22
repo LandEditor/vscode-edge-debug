@@ -15,6 +15,7 @@ export class EdgeDebugSession extends ChromeDebugSession {
 		isServer: boolean = false,
 	) {
 		let version = "edge." + require("../../package.json").version;
+
 		super(targetLinesStartAt1, isServer, {
 			adapter: EdgeDebugAdapter,
 			extensionName: "vscode-edge-debug",

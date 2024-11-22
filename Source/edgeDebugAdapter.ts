@@ -22,6 +22,7 @@ export class EdgeDebugAdapter extends ChromeDebugAdapter {
 	//private _launchAdapter(url?:string, port?:number, adapterExePath?:string ):Promise<any> {
 	private _launchAdapter(args?: any): Promise<any> {
 		let adapterExePath = args.runtimeExecutable;
+
 		if (!adapterExePath) {
 			adapterExePath = edgeUtils.getAdapterPath();
 		}
@@ -43,6 +44,7 @@ export class EdgeDebugAdapter extends ChromeDebugAdapter {
 		}
 
 		let adapterArgs: string[] = [];
+
 		if (!args.port) {
 			args.port = 9222;
 		}
@@ -60,8 +62,10 @@ export class EdgeDebugAdapter extends ChromeDebugAdapter {
 			(jsonResponse: any) => {
 				try {
 					const responseArray = JSON.parse(jsonResponse);
+
 					let targetBrowser: string = responseArray.Browser;
 					targetBrowser = targetBrowser.toLocaleLowerCase();
+
 					if (targetBrowser.indexOf("edge") > -1) {
 						return Promise.resolve(args);
 					}
@@ -110,6 +114,7 @@ export class EdgeDebugAdapter extends ChromeDebugAdapter {
 		logger.log(`Launching Edge`);
 
 		let launchUrl: string;
+
 		if (args.file) {
 			launchUrl = "file:///" + path.resolve(args.cwd, args.file);
 		} else if (args.url) {
