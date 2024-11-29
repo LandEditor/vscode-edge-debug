@@ -29,6 +29,7 @@ export function getAdapterPath(): string {
 	} else {
 		arch = "x86";
 	}
+
 	if (platform === utils.Platform.Windows) {
 		if (arch === "x64") {
 			return EDGE_ADAPTER_PATH.WINx64;
@@ -36,5 +37,6 @@ export function getAdapterPath(): string {
 			return EDGE_ADAPTER_PATH.WINx86;
 		}
 	}
+
 	return null;
 }

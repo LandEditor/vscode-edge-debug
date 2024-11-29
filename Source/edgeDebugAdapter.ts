@@ -50,10 +50,12 @@ export class EdgeDebugAdapter extends ChromeDebugAdapter {
 		}
 		// We always tell the adpater what port to listen on so there's no shared info between the adapter and the extension
 		let portCmdArg = "--port=" + args.port;
+
 		adapterArgs.push(portCmdArg);
 
 		if (args.url) {
 			let launchUrlArg = "--launch=" + args.url;
+
 			adapterArgs.push(launchUrlArg);
 		}
 
@@ -64,6 +66,7 @@ export class EdgeDebugAdapter extends ChromeDebugAdapter {
 					const responseArray = JSON.parse(jsonResponse);
 
 					let targetBrowser: string = responseArray.Browser;
+
 					targetBrowser = targetBrowser.toLocaleLowerCase();
 
 					if (targetBrowser.indexOf("edge") > -1) {
@@ -83,11 +86,13 @@ export class EdgeDebugAdapter extends ChromeDebugAdapter {
 				logger.log(
 					`spawn('${adapterExePath}', ${JSON.stringify(adapterArgs)})`,
 				);
+
 				this._adapterProc = childProcess.execFile(
 					adapterExePath,
 					adapterArgs,
 					(err) => {
 						logger.error(`Adapter error: ${err}`);
+
 						this.terminateSession(err);
 					},
 					(data) => {
@@ -107,6 +112,7 @@ export class EdgeDebugAdapter extends ChromeDebugAdapter {
 		if (debugSession == null) {
 			debugSession = new EdgeDebugSession(false);
 		}
+
 		super(opts, debugSession);
 	}
 
@@ -137,6 +143,7 @@ export class EdgeDebugAdapter extends ChromeDebugAdapter {
 	public clearEverything(): void {
 		if (this._adapterProc) {
 			this._adapterProc.kill("SIGINT");
+
 			this._adapterProc = null;
 		}
 
