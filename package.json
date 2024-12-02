@@ -268,7 +268,7 @@
 	},
 	"description": "Debug your JavaScript code in the Edge browser.",
 	"devDependencies": {
-		"@types/node": "22.10.0",
+		"@types/node": "22.10.1",
 		"mockery": "2.1.0",
 		"sinon": "19.0.2"
 	},
