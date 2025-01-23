@@ -273,7 +273,7 @@
 		"ws": "8.18.0"
 	},
 	"devDependencies": {
-		"@types/node": "22.10.7",
+		"@types/node": "22.10.9",
 		"mockery": "2.1.0",
 		"sinon": "19.0.2"
 	},
